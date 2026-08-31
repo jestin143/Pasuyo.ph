@@ -2,241 +2,251 @@ import { Link } from 'react-router-dom'
 import { municipalities } from '../../data/orientalMindoro.js'
 
 export default function HomePage() {
-  const featuredMunicipalities = municipalities.slice(0, 10)
+  const featuredMunicipalities = municipalities
+    .slice(0, 10)
+    .map((municipality) => municipality.name)
 
   return (
     <main className="home">
 
-      {/* HERO */}
+      {/* =========================
+          HERO
+      ========================== */}
       <section className="home-hero">
-        <div className="home-hero-inner">
+        <div className="home-container home-hero-grid">
 
+          {/* Hero Content */}
           <div className="home-hero-content">
-            <span className="home-hero-badge">
+
+            <div className="home-badge">
               <span className="status-dot" />
               PASUYO.PH • ORIENTAL MINDORO
-            </span>
+            </div>
 
-            <h1 className="home-hero-title">
+            <h1 className="home-title">
               May ipapasuyo ka?
               <br />
-              <span className="home-hero-accent">Pasuyo mo lang.</span>
+              <span>Pasuyo mo lang.</span>
               <br />
               Kami na ang bahala.
             </h1>
 
-            <p className="home-hero-description">
-              Magpabili, magpa-pickup, o magpa-deliver.
-              I-submit ang kailangan mo at hayaan ang PASUYO.PH
-              na tumulong sa iyong local delivery request.
+            <p className="home-description">
+              Magpabili, magpa-pickup, magpa-deliver, o magpagawa
+              ng kailangan mo. I-submit ang request at makipag-ugnayan
+              sa local rider para sa iyong delivery.
             </p>
 
-            <div className="home-hero-actions">
-              <Link to="/customer" className="home-btn home-btn-primary">
-                BOOK PASABUY
+            <div className="home-actions">
+              <Link to="/customer" className="home-button home-button-primary">
+                Magpasuyo
                 <span>→</span>
               </Link>
 
-              <Link to="/rider/register" className="home-btn home-btn-secondary">
-                BECOME A RIDER
+              <Link
+                to="/rider/register"
+                className="home-button home-button-secondary"
+              >
+                Maging Rider
               </Link>
             </div>
 
-            <div className="home-hero-trust">
+            <div className="home-trust">
               <span>
-                <span className="check-mark">✓</span>
+                <b>✓</b>
                 Local-first
               </span>
 
               <span>
-                <span className="check-mark">✓</span>
+                <b>✓</b>
                 Simple booking
               </span>
 
               <span>
-                <span className="check-mark">✓</span>
-                Community-driven
+                <b>✓</b>
+                Para sa Mindoro
               </span>
             </div>
+
           </div>
 
-          {/* DELIVERY / MAP VISUAL */}
-          <div className="home-hero-visual">
-            <div className="home-map-card">
 
-              <div className="home-map-header">
-                <div className="home-map-label">
-                  <span className="map-pin-small">⌖</span>
-                  PASUYO.PH MAP
+          {/* Hero Visual */}
+          <div className="home-hero-visual">
+
+            <div className="delivery-panel">
+
+              <div className="delivery-panel-header">
+                <div>
+                  <small>PASABUY REQUEST</small>
+                  <strong>Delivery Request</strong>
                 </div>
 
-                <span className="home-map-region">
-                  MINDORO
+                <span className="request-status">
+                  NEW
                 </span>
               </div>
 
-              <div className="home-map-area">
 
-                <div className="home-route">
+              <div className="delivery-route">
 
-                  <div className="home-route-item">
-                    <div className="home-route-icon pickup-icon">
-                      P
-                    </div>
-
-                    <div className="home-route-info">
-                      <span>PICKUP</span>
-                      <strong>Chosen store</strong>
-                      <small>Local store / tindahan</small>
-                    </div>
+                <div className="route-item">
+                  <div className="route-icon pickup-icon">
+                    P
                   </div>
 
-                  <div className="home-route-line" />
+                  <div className="route-info">
+                    <small>PICKUP</small>
+                    <strong>Your chosen store</strong>
+                    <span>Local store / tindahan</span>
+                  </div>
+                </div>
 
-                  <div className="home-route-item">
-                    <div className="home-route-icon rider-icon">
-                      🏍️
-                    </div>
 
-                    <div className="home-route-info">
-                      <span>RIDER</span>
-                      <strong>Delivery in progress</strong>
-                      <small>Pickup → Delivery</small>
-                    </div>
+                <div className="route-connector">
+                  <span />
+                  <span />
+                  <span />
+                </div>
+
+
+                <div className="route-item">
+                  <div className="route-icon rider-icon">
+                    🏍️
                   </div>
 
-                  <div className="home-route-line" />
+                  <div className="route-info">
+                    <small>RIDER</small>
+                    <strong>Delivery in progress</strong>
+                    <span>Rider accepts the request</span>
+                  </div>
+                </div>
 
-                  <div className="home-route-item">
-                    <div className="home-route-icon delivery-icon">
-                      ⌖
-                    </div>
 
-                    <div className="home-route-info">
-                      <span>DELIVERY</span>
-                      <strong>Your location</strong>
-                      <small>Recipient address</small>
-                    </div>
+                <div className="route-connector">
+                  <span />
+                  <span />
+                  <span />
+                </div>
+
+
+                <div className="route-item">
+                  <div className="route-icon delivery-icon">
+                    ⌖
                   </div>
 
+                  <div className="route-info">
+                    <small>DELIVERY</small>
+                    <strong>Your location</strong>
+                    <span>Home / recipient address</span>
+                  </div>
                 </div>
 
               </div>
 
-              <div className="home-map-footer">
+
+              <div className="delivery-panel-footer">
                 <div>
-                  <span>REQUEST</span>
-                  <strong>Pasabuy</strong>
+                  <small>STATUS</small>
+                  <strong>Waiting for Rider</strong>
                 </div>
 
-                <div>
-                  <span>SERVICE AREA</span>
-                  <strong>Oriental Mindoro</strong>
+                <div className="service-pill">
+                  PasaBuy
                 </div>
               </div>
 
             </div>
+
           </div>
 
         </div>
       </section>
 
 
-      {/* QUICK ACTIONS */}
-      <section className="home-quick-actions">
+      {/* =========================
+          QUICK ACTIONS
+      ========================== */}
+      <section className="home-quick-section">
         <div className="home-container">
 
-          <div className="home-section-intro">
-            <span className="home-section-kicker">
-              PASUYO.PH
-            </span>
+          <div className="quick-grid">
 
-            <h2>
-              Isang platform para sa lahat.
-            </h2>
+            <Link to="/customer" className="quick-card quick-card-main">
 
-            <p>
-              Para sa customer, rider, at lokal na store.
-            </p>
-          </div>
-
-          <div className="home-action-grid">
-
-            <Link to="/customer" className="home-action-card customer-card">
-              <div className="home-action-top">
-                <div className="home-action-icon">
+              <div className="quick-card-top">
+                <div className="quick-icon">
                   🛒
                 </div>
 
-                <span className="home-action-label">
+                <span className="quick-label">
                   CUSTOMER
                 </span>
               </div>
 
-              <div className="home-action-content">
-                <h3>Magpasuyo</h3>
+              <h3>Magpasuyo</h3>
 
-                <p>
-                  Magpabili, magpa-pickup, o magpa-deliver
-                  ng kailangan mo.
-                </p>
-              </div>
+              <p>
+                Magpabili, magpa-pickup, o magpa-deliver
+                ng kailangan mo.
+              </p>
 
-              <span className="home-action-link">
-                Go to Customer →
+              <span className="quick-link">
+                Magpasuyo ngayon →
               </span>
+
             </Link>
 
 
-            <Link to="/rider" className="home-action-card rider-card">
-              <div className="home-action-top">
-                <div className="home-action-icon">
+            <Link to="/rider" className="quick-card">
+
+              <div className="quick-card-top">
+                <div className="quick-icon rider">
                   🏍️
                 </div>
 
-                <span className="home-action-label">
+                <span className="quick-label">
                   RIDER
                 </span>
               </div>
 
-              <div className="home-action-content">
-                <h3>Maging Rider</h3>
+              <h3>Maging Rider</h3>
 
-                <p>
-                  Tingnan ang available requests at
-                  mag-manage ng delivery.
-                </p>
-              </div>
+              <p>
+                Tingnan ang available requests at
+                mag-manage ng delivery.
+              </p>
 
-              <span className="home-action-link">
-                Go to Rider →
+              <span className="quick-link">
+                Pumunta sa Rider →
               </span>
+
             </Link>
 
 
-            <Link to="/store" className="home-action-card store-card">
-              <div className="home-action-top">
-                <div className="home-action-icon">
+            <Link to="/store" className="quick-card">
+
+              <div className="quick-card-top">
+                <div className="quick-icon store">
                   🏪
                 </div>
 
-                <span className="home-action-label">
+                <span className="quick-label">
                   STORE
                 </span>
               </div>
 
-              <div className="home-action-content">
-                <h3>Para sa Store</h3>
+              <h3>Para sa Store</h3>
 
-                <p>
-                  I-register ang iyong lokal na tindahan
-                  sa PASUYO.PH.
-                </p>
-              </div>
+              <p>
+                I-register ang iyong lokal na tindahan
+                sa PASUYO.PH.
+              </p>
 
-              <span className="home-action-link">
-                Go to Store →
+              <span className="quick-link">
+                Register Store →
               </span>
+
             </Link>
 
           </div>
@@ -245,12 +255,16 @@ export default function HomePage() {
       </section>
 
 
-      {/* HOW IT WORKS */}
+      {/* =========================
+          HOW IT WORKS
+      ========================== */}
       <section className="home-how">
+
         <div className="home-container">
 
-          <div className="home-section-intro centered">
-            <span className="home-section-kicker">
+          <div className="home-section-heading">
+
+            <span>
               PAANO GUMAGANA
             </span>
 
@@ -259,102 +273,132 @@ export default function HomePage() {
             </h2>
 
             <p>
-              Tatlong hakbang para makapag-submit
-              ng delivery request.
+              Tatlong hakbang mula request hanggang delivery.
             </p>
+
           </div>
+
 
           <div className="home-steps">
 
             <div className="home-step">
-              <div className="home-step-number">
+
+              <div className="step-number">
                 01
               </div>
 
-              <div className="home-step-content">
-                <h3>Gumawa ng request</h3>
+              <div>
+                <h3>
+                  Gumawa ng request
+                </h3>
 
                 <p>
                   Ilagay ang item, quantity, tindahan,
-                  at delivery address.
+                  at delivery location.
                 </p>
               </div>
+
             </div>
 
 
             <div className="home-step">
-              <div className="home-step-number">
+
+              <div className="step-number dark">
                 02
               </div>
 
-              <div className="home-step-content">
-                <h3>Makahanap ng rider</h3>
+              <div>
+                <h3>
+                  Rider accepts
+                </h3>
 
                 <p>
-                  Makikita ng available rider ang
-                  iyong pasabuy request.
+                  Makikita ng rider ang available request
+                  at maaari niya itong tanggapin.
                 </p>
               </div>
+
             </div>
 
 
             <div className="home-step">
-              <div className="home-step-number">
+
+              <div className="step-number light">
                 03
               </div>
 
-              <div className="home-step-content">
-                <h3>Matanggap ang delivery</h3>
+              <div>
+                <h3>
+                  Matanggap ang delivery
+                </h3>
 
                 <p>
-                  Susundan ang request status hanggang
-                  makumpleto ang delivery.
+                  Makikita ang status ng request habang
+                  inaasikaso ang delivery.
                 </p>
               </div>
+
             </div>
 
           </div>
 
-          <div className="home-section-action">
-            <Link to="/customer" className="home-btn home-btn-primary">
-              GUMAWA NG PASABUY
+
+          <div className="home-section-button">
+
+            <Link
+              to="/customer"
+              className="home-button home-button-primary"
+            >
+              Gumawa ng Pasabuy Request
               <span>→</span>
             </Link>
+
           </div>
 
         </div>
+
       </section>
 
 
-      {/* FEATURES */}
+      {/* =========================
+          FEATURES
+      ========================== */}
       <section className="home-features">
+
         <div className="home-container">
 
-          <div className="home-section-intro">
-            <span className="home-section-kicker">
-              PLATFORM FEATURES
+          <div className="home-section-heading">
+
+            <span>
+              PARA SA LAHAT
             </span>
 
             <h2>
-              Ginawa para sa local delivery.
+              Isang platform para sa local delivery.
             </h2>
 
             <p>
-              Bawat bahagi ng PASUYO.PH ay may sariling purpose.
+              Customer, rider, at store — magkakaugnay
+              sa iisang local platform.
             </p>
+
           </div>
 
 
-          <div className="home-feature-grid">
+          <div className="feature-grid">
 
-            {/* CUSTOMER */}
-            <div className="home-feature-card">
-              <span className="home-feature-label">
+            <div className="feature-card">
+
+              <div className="feature-icon">
+                🛍️
+              </div>
+
+              <span>
                 CUSTOMER
               </span>
 
               <h3>
-                Magpasuyo nang madali.
+                Magpasuyo nang madali
               </h3>
 
               <ul>
@@ -364,111 +408,244 @@ export default function HomePage() {
                 <li>Magpa-deliver</li>
               </ul>
 
-              <Link to="/customer" className="home-feature-link">
-                Start as Customer →
+              <Link to="/customer">
+                Customer →
               </Link>
+
             </div>
 
 
-            {/* RIDER */}
-            <div className="home-feature-card dark">
-              <span className="home-feature-label">
+            <div className="feature-card feature-card-dark">
+
+              <div className="feature-icon">
+                🏍️
+              </div>
+
+              <span>
                 RIDER
               </span>
 
               <h3>
-                Mag-deliver at kumita.
+                Mag-deliver at kumita
               </h3>
 
               <ul>
-                <li>Register as Rider</li>
-                <li>View available requests</li>
+                <li>Register as rider</li>
+                <li>View requests</li>
                 <li>Accept delivery</li>
-                <li>Manage delivery status</li>
+                <li>Manage delivery</li>
               </ul>
 
-              <Link to="/rider/register" className="home-feature-link">
-                Become a Rider →
+              <Link to="/rider">
+                Rider →
               </Link>
+
             </div>
 
 
-            {/* STORE */}
-            <div className="home-feature-card">
-              <span className="home-feature-label">
+            <div className="feature-card">
+
+              <div className="feature-icon">
+                🏪
+              </div>
+
+              <span>
                 STORE
               </span>
 
               <h3>
-                Para sa lokal na tindahan.
+                Para sa lokal na tindahan
               </h3>
 
               <ul>
                 <li>Register store</li>
                 <li>Manage store information</li>
                 <li>Add products</li>
-                <li>No product price display</li>
+                <li>Connect with customers</li>
               </ul>
 
-              <Link to="/store" className="home-feature-link">
-                Go to Store →
+              <Link to="/store">
+                Store →
               </Link>
+
             </div>
 
           </div>
 
         </div>
+
       </section>
 
 
-      {/* ORIENTAL MINDORO */}
-      <section className="home-coverage">
+      {/* =========================
+          MAP / LOCATION FEATURE
+      ========================== */}
+      <section className="home-map-section">
+
         <div className="home-container">
 
-          <div className="home-coverage-card">
+          <div className="map-feature">
 
-            <div className="home-coverage-content">
-              <span className="home-section-kicker">
-                LOCAL FIRST
+            <div className="map-feature-content">
+
+              <span className="home-kicker">
+                LOCATION-BASED
               </span>
 
               <h2>
-                Para sa buong
+                Delivery na may tamang location.
+              </h2>
+
+              <p>
+                Ang customer ay maaaring pumili ng delivery
+                location gamit ang map at location picker.
+              </p>
+
+              <div className="map-feature-list">
+
+                <div>
+                  <span>✓</span>
+                  Piliin ang municipality
+                </div>
+
+                <div>
+                  <span>✓</span>
+                  Piliin ang barangay
+                </div>
+
+                <div>
+                  <span>✓</span>
+                  Maglagay ng map pin
+                </div>
+
+                <div>
+                  <span>✓</span>
+                  Gamitin ang current location
+                </div>
+
+              </div>
+
+              <Link
+                to="/customer"
+                className="home-button home-button-primary"
+              >
+                Magpasuyo
+                <span>→</span>
+              </Link>
+
+            </div>
+
+
+            <div className="map-preview">
+
+              <div className="map-preview-header">
+                <span>
+                  📍 DELIVERY LOCATION
+                </span>
+
+                <small>
+                  MAP
+                </small>
+              </div>
+
+              <div className="fake-map">
+
+                <div className="map-road road-one" />
+                <div className="map-road road-two" />
+                <div className="map-road road-three" />
+
+                <div className="map-pin">
+                  <span>⌖</span>
+                </div>
+
+                <div className="map-location-card">
+                  <small>
+                    DELIVERY TO
+                  </small>
+
+                  <strong>
+                    Your Location
+                  </strong>
+
+                  <span>
+                    Oriental Mindoro
+                  </span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =========================
+          ORIENTAL MINDORO
+      ========================== */}
+      <section className="home-coverage">
+
+        <div className="home-container">
+
+          <div className="coverage-card">
+
+            <div className="coverage-content">
+
+              <span className="home-kicker light">
+                ORIENTAL MINDORO
+              </span>
+
+              <h2>
+                Gawa para sa buong
                 <br />
                 <span>Oriental Mindoro.</span>
               </h2>
 
               <p>
-                Ang PASUYO.PH ay ginawa para sa local
-                pasabuy at delivery needs ng mga Mindoreño.
+                Local-first platform para sa mga
+                Mindoreño. Simula sa Calapan at
+                palawak sa iba't ibang municipality.
               </p>
+
             </div>
 
 
-            <div className="home-coverage-list">
-              {featuredMunicipalities.map((municipality) => (
-                <span
-                  key={municipality.name}
-                  className="home-location-pill"
-                >
-                  {municipality.name}
+            <div className="municipality-list">
+
+              {featuredMunicipalities.map((name) => (
+                <span key={name}>
+                  {name}
                 </span>
               ))}
+
+              {municipalities.length > featuredMunicipalities.length && (
+                <span className="more">
+                  + {municipalities.length - featuredMunicipalities.length} more
+                </span>
+              )}
+
             </div>
 
           </div>
 
         </div>
+
       </section>
 
 
-      {/* FINAL CTA */}
-      <section className="home-final-cta">
+      {/* =========================
+          FINAL CTA
+      ========================== */}
+      <section className="home-final">
+
         <div className="home-container">
 
-          <div className="home-final-card">
+          <div className="final-card">
 
-            <span className="home-section-kicker">
+            <span className="home-kicker">
               PASUYO.PH
             </span>
 
@@ -482,14 +659,20 @@ export default function HomePage() {
               Gumawa ng pasabuy request at magsimula.
             </p>
 
-            <div className="home-final-actions">
+            <div className="final-actions">
 
-              <Link to="/customer" className="home-btn home-btn-primary">
+              <Link
+                to="/customer"
+                className="home-button home-button-primary"
+              >
                 BOOK PASABUY
                 <span>→</span>
               </Link>
 
-              <Link to="/stores" className="home-btn home-btn-secondary">
+              <Link
+                to="/stores"
+                className="home-button home-button-secondary"
+              >
                 BROWSE STORES
               </Link>
 
@@ -498,6 +681,7 @@ export default function HomePage() {
           </div>
 
         </div>
+
       </section>
 
     </main>
