@@ -9,19 +9,15 @@ export default function HomePage() {
   return (
     <main className="home">
 
-      {/* =========================
-          HERO
-      ========================== */}
+      {/* HERO */}
       <section className="home-hero">
         <div className="home-container home-hero-grid">
 
-          {/* Hero Content */}
           <div className="home-hero-content">
-
-            <div className="home-badge">
+            <span className="home-badge">
               <span className="status-dot" />
               PASUYO.PH • ORIENTAL MINDORO
-            </div>
+            </span>
 
             <h1 className="home-title">
               May ipapasuyo ka?
@@ -52,28 +48,14 @@ export default function HomePage() {
             </div>
 
             <div className="home-trust">
-              <span>
-                <b>✓</b>
-                Local-first
-              </span>
-
-              <span>
-                <b>✓</b>
-                Simple booking
-              </span>
-
-              <span>
-                <b>✓</b>
-                Para sa Mindoro
-              </span>
+              <span>✓ Local-first</span>
+              <span>✓ Simple booking</span>
+              <span>✓ Para sa Mindoro</span>
             </div>
-
           </div>
 
-
-          {/* Hero Visual */}
+          {/* DELIVERY VISUAL */}
           <div className="home-hero-visual">
-
             <div className="delivery-panel">
 
               <div className="delivery-panel-header">
@@ -87,13 +69,10 @@ export default function HomePage() {
                 </span>
               </div>
 
-
               <div className="delivery-route">
 
                 <div className="route-item">
-                  <div className="route-icon pickup-icon">
-                    P
-                  </div>
+                  <div className="route-icon pickup-icon">P</div>
 
                   <div className="route-info">
                     <small>PICKUP</small>
@@ -102,18 +81,14 @@ export default function HomePage() {
                   </div>
                 </div>
 
-
                 <div className="route-connector">
-                  <span />
-                  <span />
-                  <span />
+                  <i />
+                  <i />
+                  <i />
                 </div>
 
-
                 <div className="route-item">
-                  <div className="route-icon rider-icon">
-                    🏍️
-                  </div>
+                  <div className="route-icon rider-icon">🏍️</div>
 
                   <div className="route-info">
                     <small>RIDER</small>
@@ -122,18 +97,14 @@ export default function HomePage() {
                   </div>
                 </div>
 
-
                 <div className="route-connector">
-                  <span />
-                  <span />
-                  <span />
+                  <i />
+                  <i />
+                  <i />
                 </div>
 
-
                 <div className="route-item">
-                  <div className="route-icon delivery-icon">
-                    ⌖
-                  </div>
+                  <div className="route-icon delivery-icon">⌖</div>
 
                   <div className="route-info">
                     <small>DELIVERY</small>
@@ -144,44 +115,34 @@ export default function HomePage() {
 
               </div>
 
-
               <div className="delivery-panel-footer">
                 <div>
                   <small>STATUS</small>
                   <strong>Waiting for Rider</strong>
                 </div>
 
-                <div className="service-pill">
+                <span className="service-pill">
                   PasaBuy
-                </div>
+                </span>
               </div>
 
             </div>
-
           </div>
 
         </div>
       </section>
 
 
-      {/* =========================
-          QUICK ACTIONS
-      ========================== */}
+      {/* QUICK ACTIONS */}
       <section className="home-quick-section">
         <div className="home-container">
 
           <div className="quick-grid">
 
             <Link to="/customer" className="quick-card quick-card-main">
-
               <div className="quick-card-top">
-                <div className="quick-icon">
-                  🛒
-                </div>
-
-                <span className="quick-label">
-                  CUSTOMER
-                </span>
+                <div className="quick-icon">🛒</div>
+                <span className="quick-label">CUSTOMER</span>
               </div>
 
               <h3>Magpasuyo</h3>
@@ -194,20 +155,13 @@ export default function HomePage() {
               <span className="quick-link">
                 Magpasuyo ngayon →
               </span>
-
             </Link>
 
 
             <Link to="/rider" className="quick-card">
-
               <div className="quick-card-top">
-                <div className="quick-icon rider">
-                  🏍️
-                </div>
-
-                <span className="quick-label">
-                  RIDER
-                </span>
+                <div className="quick-icon rider">🏍️</div>
+                <span className="quick-label">RIDER</span>
               </div>
 
               <h3>Maging Rider</h3>
@@ -220,20 +174,13 @@ export default function HomePage() {
               <span className="quick-link">
                 Pumunta sa Rider →
               </span>
-
             </Link>
 
 
             <Link to="/store" className="quick-card">
-
               <div className="quick-card-top">
-                <div className="quick-icon store">
-                  🏪
-                </div>
-
-                <span className="quick-label">
-                  STORE
-                </span>
+                <div className="quick-icon store">🏪</div>
+                <span className="quick-label">STORE</span>
               </div>
 
               <h3>Para sa Store</h3>
@@ -246,27 +193,19 @@ export default function HomePage() {
               <span className="quick-link">
                 Register Store →
               </span>
-
             </Link>
 
           </div>
-
         </div>
       </section>
 
 
-      {/* =========================
-          HOW IT WORKS
-      ========================== */}
+      {/* HOW IT WORKS */}
       <section className="home-how">
-
         <div className="home-container">
 
           <div className="home-section-heading">
-
-            <span>
-              PAANO GUMAGANA
-            </span>
+            <span>PAANO GUMAGANA</span>
 
             <h2>
               Simple lang ang pagpasuyo.
@@ -275,76 +214,56 @@ export default function HomePage() {
             <p>
               Tatlong hakbang mula request hanggang delivery.
             </p>
-
           </div>
 
 
           <div className="home-steps">
 
             <div className="home-step">
-
-              <div className="step-number">
-                01
-              </div>
+              <div className="step-number">01</div>
 
               <div>
-                <h3>
-                  Gumawa ng request
-                </h3>
+                <h3>Gumawa ng request</h3>
 
                 <p>
                   Ilagay ang item, quantity, tindahan,
                   at delivery location.
                 </p>
               </div>
-
             </div>
 
 
             <div className="home-step">
-
-              <div className="step-number dark">
-                02
-              </div>
+              <div className="step-number dark">02</div>
 
               <div>
-                <h3>
-                  Rider accepts
-                </h3>
+                <h3>Rider accepts</h3>
 
                 <p>
                   Makikita ng rider ang available request
                   at maaari niya itong tanggapin.
                 </p>
               </div>
-
             </div>
 
 
             <div className="home-step">
-
-              <div className="step-number light">
-                03
-              </div>
+              <div className="step-number light">03</div>
 
               <div>
-                <h3>
-                  Matanggap ang delivery
-                </h3>
+                <h3>Matanggap ang delivery</h3>
 
                 <p>
                   Makikita ang status ng request habang
                   inaasikaso ang delivery.
                 </p>
               </div>
-
             </div>
 
           </div>
 
 
           <div className="home-section-button">
-
             <Link
               to="/customer"
               className="home-button home-button-primary"
@@ -352,26 +271,18 @@ export default function HomePage() {
               Gumawa ng Pasabuy Request
               <span>→</span>
             </Link>
-
           </div>
 
         </div>
-
       </section>
 
 
-      {/* =========================
-          FEATURES
-      ========================== */}
+      {/* FEATURES */}
       <section className="home-features">
-
         <div className="home-container">
 
           <div className="home-section-heading">
-
-            <span>
-              PARA SA LAHAT
-            </span>
+            <span>PARA SA LAHAT</span>
 
             <h2>
               Isang platform para sa local delivery.
@@ -381,25 +292,17 @@ export default function HomePage() {
               Customer, rider, at store — magkakaugnay
               sa iisang local platform.
             </p>
-
           </div>
 
 
           <div className="feature-grid">
 
             <div className="feature-card">
+              <div className="feature-icon">🛍️</div>
 
-              <div className="feature-icon">
-                🛍️
-              </div>
+              <span>CUSTOMER</span>
 
-              <span>
-                CUSTOMER
-              </span>
-
-              <h3>
-                Magpasuyo nang madali
-              </h3>
+              <h3>Magpasuyo nang madali</h3>
 
               <ul>
                 <li>Magpasuyo</li>
@@ -411,23 +314,15 @@ export default function HomePage() {
               <Link to="/customer">
                 Customer →
               </Link>
-
             </div>
 
 
             <div className="feature-card feature-card-dark">
+              <div className="feature-icon">🏍️</div>
 
-              <div className="feature-icon">
-                🏍️
-              </div>
+              <span>RIDER</span>
 
-              <span>
-                RIDER
-              </span>
-
-              <h3>
-                Mag-deliver at kumita
-              </h3>
+              <h3>Mag-deliver at kumita</h3>
 
               <ul>
                 <li>Register as rider</li>
@@ -439,23 +334,15 @@ export default function HomePage() {
               <Link to="/rider">
                 Rider →
               </Link>
-
             </div>
 
 
             <div className="feature-card">
+              <div className="feature-icon">🏪</div>
 
-              <div className="feature-icon">
-                🏪
-              </div>
+              <span>STORE</span>
 
-              <span>
-                STORE
-              </span>
-
-              <h3>
-                Para sa lokal na tindahan
-              </h3>
+              <h3>Para sa lokal na tindahan</h3>
 
               <ul>
                 <li>Register store</li>
@@ -467,27 +354,20 @@ export default function HomePage() {
               <Link to="/store">
                 Store →
               </Link>
-
             </div>
 
           </div>
-
         </div>
-
       </section>
 
 
-      {/* =========================
-          MAP / LOCATION FEATURE
-      ========================== */}
+      {/* MAP FEATURE */}
       <section className="home-map-section">
-
         <div className="home-container">
 
           <div className="map-feature">
 
             <div className="map-feature-content">
-
               <span className="home-kicker">
                 LOCATION-BASED
               </span>
@@ -497,12 +377,12 @@ export default function HomePage() {
               </h2>
 
               <p>
-                Ang customer ay maaaring pumili ng delivery
-                location gamit ang map at location picker.
+                Pumili ng municipality at barangay,
+                maglagay ng map pin, o gamitin ang
+                current location.
               </p>
 
               <div className="map-feature-list">
-
                 <div>
                   <span>✓</span>
                   Piliin ang municipality
@@ -522,7 +402,6 @@ export default function HomePage() {
                   <span>✓</span>
                   Gamitin ang current location
                 </div>
-
               </div>
 
               <Link
@@ -532,20 +411,14 @@ export default function HomePage() {
                 Magpasuyo
                 <span>→</span>
               </Link>
-
             </div>
 
 
             <div className="map-preview">
 
               <div className="map-preview-header">
-                <span>
-                  📍 DELIVERY LOCATION
-                </span>
-
-                <small>
-                  MAP
-                </small>
+                <span>📍 DELIVERY LOCATION</span>
+                <small>MAP</small>
               </div>
 
               <div className="fake-map">
@@ -555,13 +428,11 @@ export default function HomePage() {
                 <div className="map-road road-three" />
 
                 <div className="map-pin">
-                  <span>⌖</span>
+                  ⌖
                 </div>
 
                 <div className="map-location-card">
-                  <small>
-                    DELIVERY TO
-                  </small>
+                  <small>DELIVERY TO</small>
 
                   <strong>
                     Your Location
@@ -573,27 +444,20 @@ export default function HomePage() {
                 </div>
 
               </div>
-
             </div>
 
           </div>
-
         </div>
-
       </section>
 
 
-      {/* =========================
-          ORIENTAL MINDORO
-      ========================== */}
+      {/* COVERAGE */}
       <section className="home-coverage">
-
         <div className="home-container">
 
           <div className="coverage-card">
 
             <div className="coverage-content">
-
               <span className="home-kicker light">
                 ORIENTAL MINDORO
               </span>
@@ -609,12 +473,10 @@ export default function HomePage() {
                 Mindoreño. Simula sa Calapan at
                 palawak sa iba't ibang municipality.
               </p>
-
             </div>
 
 
             <div className="municipality-list">
-
               {featuredMunicipalities.map((name) => (
                 <span key={name}>
                   {name}
@@ -626,21 +488,15 @@ export default function HomePage() {
                   + {municipalities.length - featuredMunicipalities.length} more
                 </span>
               )}
-
             </div>
 
           </div>
-
         </div>
-
       </section>
 
 
-      {/* =========================
-          FINAL CTA
-      ========================== */}
+      {/* FINAL CTA */}
       <section className="home-final">
-
         <div className="home-container">
 
           <div className="final-card">
@@ -679,9 +535,7 @@ export default function HomePage() {
             </div>
 
           </div>
-
         </div>
-
       </section>
 
     </main>
